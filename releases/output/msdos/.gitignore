@@ -1,3 +1,0 @@
-# For empty directories: ignore everything but this file
-*
-!.gitignore
