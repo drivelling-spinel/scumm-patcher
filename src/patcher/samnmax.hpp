@@ -32,9 +32,18 @@
 class SamnMaxPatcher : public ScummRp
 {
 
+private:
+	static void _patchScript200(std::string &fullpath);
+
 protected:
 	static void _getOptions(int argc, const char **argv, const ScummRp::Parameter *params);
 	static void _processGameFilesV4567();
+	static bool _readOption(const char *arg, char *pendingParams);
+	static void _usage();
+	static bool _invalidOptions();
+	static void _patch(TreeBlock &tree);
+	static bool _shouldDescend(TreeBlockPtr &blockPtr);
+	static void _patchBlock(TreeBlockPtr &blockPtr, std::string &path, std::string &filename);
 
 public:
 	static int main(int argc, const char **argv);

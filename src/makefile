@@ -11,8 +11,14 @@ STUB =
 #For older versions of UPX or less powerful PCs
 UPXOPT=-9
 
+ifeq ($(REDIR),1)
+REDIR_CMD=redir -oa error.log -eo 
+else
+REDIR_CMD=
+endif
+
 # compiler
-CC=gcc
+CC=$(REDIR_CMD) gcc
         
 # the exe file name -sf
 EXE=$(O)/$(EXENAME).exe
@@ -41,13 +47,13 @@ SCUMMRPOBJS = \
 
 PATCHEROBJS = \
 	$(O)/samnmax.o       \
-
+	$(O)/patch.o
 
 # object files
 OBJS=$(COMMONOBJS) $(SCUMMRPOBJS) $(PATCHEROBJS)
 
 
-build : $(O) $(EXE) 
+all : $(O) $(EXE) 
 
 $(EXE): $(OBJS) 
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
@@ -65,6 +71,11 @@ ifneq ($(wildcard $(addsuffix /djp.exe,$(subst ;, ,$(PATH)))),)
 endif
 endif
 
+test : $(O) $(O)/test.exe
+
+$(O)/test.exe : $(O)/patch.o $(O)/test.o
+	$(CC) $(CFLAGS) $(LDFLAGS) $(O)/patch.o $(O)/test.o -o $@ 
+
 
 clean:
 	del $(O)\*.o
@@ -81,4 +92,7 @@ $(O)/%.o:   SCUMMRP/%.cpp
 
 $(O)/%.o:   PATCHER/%.cpp
 	$(CC) -Iscummrp $(CFLAGS) -c $< -o $@
+
+$(O)/%.o:   PATCHER/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 

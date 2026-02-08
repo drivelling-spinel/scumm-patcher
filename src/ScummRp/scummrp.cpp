@@ -518,11 +518,11 @@ void ScummRp::_usage()
 	std::cout << " -L         " << "list supported games\n\n";
 	std::cout << " -d path    " << "path to dumping directory (default: " << ScummRp::_paramDumpingDir << ")\n";
 	std::cout << " -g gameid  " << "select a game (as given by -L)\n";
-// 	std::cout << " -m         " << "work in memory (whole game files are loaded in RAM)\n";
-// 	std::cout << " -O         " << "optimize for sequential access (with -i)\n";
+ 	std::cout << " -m         " << "work in memory (whole game files are loaded in RAM)\n";
+ 	std::cout << " -O         " << "optimize for sequential access (with -i)\n";
 	std::cout << " -p path    " << "path to the game (default: current directory)\n";
 	std::cout << " -q         " << "quiet mode\n";
-// 	std::cout << " -s         " << "slow mode (disable automatic -m or -O)\n";
+ 	std::cout << " -s         " << "slow mode (disable automatic -m or -O)\n";
 	std::cout << " -t tag     " << "only export/import blocks with this tag\n";
 	std::cout << " -v         " << "verbose mode\n";
 	std::cout << " -V         " << "more verbose mode (lists blocks)\n\n";
