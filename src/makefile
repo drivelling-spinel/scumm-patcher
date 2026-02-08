@@ -5,7 +5,7 @@ EXENAME=patcher
 
 PLATFORM = djgpp
 
-STUB = 
+STUB = $(O)\stub.exe
 
 #UPXOPT=--ultra-brute --lzma
 #For older versions of UPX or less powerful PCs

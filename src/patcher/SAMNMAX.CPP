@@ -63,7 +63,7 @@ int SamnMaxPatcher::main(int argc, const char **argv)
 
 	SamnMaxPatcher::_getOptions(argc, argv, ScummRp::_rpParameters);
 	ScummIO::setInfoSlots(ScummRp::_infoSlots);
-	ScummIO::info(INF_GLOBAL, xsprintf("%s %s (build %s) by %s", ScummRp::NAME, ScummRp::VERSION, SCUMMTR_BUILD_DATE, ScummRp::AUTHOR));
+	ScummIO::info(INF_GLOBAL, xsprintf("Patcher tool based on %s by %s", ScummRp::NAME, ScummRp::AUTHOR));
 	ScummIO::info(INF_GLOBAL, "");
 
 	if (SamnMaxPatcher::_invalidOptions())
@@ -94,8 +94,6 @@ int SamnMaxPatcher::main(int argc, const char **argv)
 		ScummIO::fatal("Only patching Sam and Max Hit the Road is supported");
 
 	ScummRp::_options |= OPT_IMPORT | OPT_EXPORT;
-	ScummRp::_fileOptions &= ~BlocksFile::BFOPT_AUTO;
-	ScummRp::_fileOptions |= BlocksFile::BFOPT_RAM;
 
 	if (ScummRp::_options & ScummRp::OPT_IMPORT)
 		ScummRp::_fileOptions |= BlocksFile::BFOPT_BACKUP;

@@ -14,7 +14,7 @@ void patchScript200(const char * fname)
   f = fopen(fname, "rb+");
   if(!f) 
   {
-    perror("Failed to open file for patching");
+    perror("Failed to open file for patching\n");
     return;
   }
 
@@ -68,7 +68,7 @@ rewind:
   fclose(f);
   if(!pc)
   {    
-    fprintf(stderr, "File not patched - incompatible game or patched already?");
+    fprintf(stderr, "File not patched - incompatible game or patched already?\n");
     return;
   }
   sync();
