@@ -14,11 +14,10 @@ or run
 
 _Note:_ DOS long filenames support is required. In FreeDOS this can be activated e.g. by loading `DOSLFN`.
 
-#### Sound driver patch
+#### Sound Blaster drivers patch
 
-`WDRPATCH.BAT` is provided which _"fixes"_ issues that Sound Blaster drivers from v6.5.0 interpreter have with CD-ROM version of the game,
-by forcing specific sampling rate. Patch requires `FPATCH.COM`. It has only been tested with game binaries listed as "German"
-under "LucasArts Demo Files" section of [International House of Mojo](ttps://mixnmojo.com).
+Patch `WDRPATCH.BAT` is included in `extras` directory for issues that Sound Blaster drivers of interpreter v6.5.0 have with CD-ROM version of the game.
+Patch requires `FPATCH.COM`. It has only been tested with game binaries listed as "German" under "LucasArts Demo Files" section of [International House of Mojo](https://mixnmojo.com).
 
 
 ### Building
